@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "ae782b00-cad7-4c28-b4d2-07b2c6df0d8e",
+		"name": "Postman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"vijay3\",\r\n    \"password\":\"123456\",\r\n    \"hash\":\"123456\",\r\n    \"firstName\":\"Vijay\",\r\n    \"lastName\":\"Giri\",\r\n    \"role\":\"AUDITOR\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}users/register",
+					"host": [
+						"{{host}}users"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"vijay3\",\r\n    \"password\":\"123456\",\r\n    \"role\":\"AUDITOR\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}users/authenticate",
+					"host": [
+						"{{host}}users"
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2M2Y1MDFlOTQ1YzI0YTBmZDBlNmM2ZTMiLCJpYXQiOjE2NzcwMDEzMDR9.gW1A4xlLcxNr1en3zaH2dRyuBqCstY-kwzvoGWKgLDI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"63f501e945c24a0fd0e6c6e3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}users/logout",
+					"host": [
+						"{{host}}users"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Audit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2M2Y2NWE1NmRlM2QwMDA1ZDhhMTg4NWQiLCJpYXQiOjE2NzcwODkzODN9.ddVG-dv-gkXtl0FARNJl6dal7G6Qs8Mq3QQ-qz4z8CA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}audit/63f65a56de3d0005d8a1885d",
+					"host": [
+						"{{host}}audit"
+					],
+					"path": [
+						"63f65a56de3d0005d8a1885d"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:4000/",
+			"type": "default"
+		}
+	]
+}
