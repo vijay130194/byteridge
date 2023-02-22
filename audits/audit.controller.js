@@ -11,5 +11,10 @@ module.exports = router;
 function getAll(req, res, next) {
     auditService.getAll(req.params.id)
         .then(users => res.json(users))
-        .catch(err => next(err));
+        .catch(err => {
+            if(err === "Unauthorized User!"){
+                return res.status(401).json({"message": err});
+            }
+            next(err);
+        });
 }

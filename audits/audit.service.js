@@ -15,7 +15,7 @@ async function getAll(id) {
         throw "user not present"
     }
     if(user.role !== 'AUDITOR'){
-        throw "user is not an auditor"
+        throw "Unauthorized User!"
     }
     const audits = await Audit.find();
     return audits;
